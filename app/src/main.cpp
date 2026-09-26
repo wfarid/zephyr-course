@@ -15,6 +15,8 @@ int main(void)
 {
     bool led_state = true;
 
+    LOG_INF("Hello World! from board '%s'", CONFIG_BOARD_TARGET);
+
     if (!gpio_is_ready_dt(&led)) return 0;
 
     if (gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE) < 0) return 0;
